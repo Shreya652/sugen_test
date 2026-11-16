@@ -45,10 +45,11 @@ partial results after the retry limit are marked incomplete.
 
 Open `evaluate_dev_test04.ipynb` for the LangChain doctor-and-judge experiment.
 Install `requirements_test04.txt` in the notebook's Python environment. It
-defaults to a local TF-IDF baseline; selecting agent mode sends the held-out
+supports a local TF-IDF baseline; selecting agent mode sends the held-out
 notes and retrieved labeled training examples to OpenAI, incurs API charges,
 and requires permission to share those notes. The agents can search MMS codes,
 compare similarity, inspect complete ICD code families, and retrieve analogous
 training examples. Outputs are saved separately in `out/` by mode. The agent
 experiment is not for clinical use and does not enforce the assessment's
 dollar or time budget.
+See [README_test04.md](./README_test04.md) for diagrams and workflow details.
