@@ -1,0 +1,10 @@
+{"id": "dev-051", "slice": "A", "gold": ["5B52"], "pred": ["5B52", "MG29.3"], "top1": true, "top3": true}
+{"id": "dev-052", "slice": "A", "gold": ["BD10"], "pred": ["BD10", "BD1Z"], "top1": true, "top3": true}
+{"id": "dev-053", "slice": "A", "gold": ["QA42.0"], "pred": ["QA42.0"], "top1": true, "top3": true}
+{"id": "dev-054", "slice": "A", "gold": ["5A40.0"], "pred": ["5A40.0", "MA18.0Y"], "top1": true, "top3": true}
+{"id": "dev-055", "slice": "A", "gold": ["BA40.1"], "pred": ["BA40.1"], "top1": true, "top3": true}
+{"id": "dev-056", "slice": "A", "gold": ["JA63.2"], "pred": ["JA63.2"], "top1": true, "top3": true}
+{"id": "dev-057", "slice": "A", "gold": ["5A00.2Z"], "pred": ["5A00.2"], "top1": false, "top3": false}
+{"id": "dev-058", "slice": "A", "gold": ["BD90.0"], "pred": ["BD90.0", "BD90.Z", "MA01.0"], "top1": true, "top3": true}
+{"id": "dev-059", "slice": "A", "gold": ["JA62.1"], "pred": ["JA62.1", "GC00.1", "JA62"], "top1": true, "top3": true}
+{"id": "dev-060", "slice": "A", "gold": ["5B81.01"], "pred": ["5B81.0", "5B81.01"], "top1": false, "top3": true}
