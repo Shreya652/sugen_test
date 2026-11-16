@@ -54,9 +54,7 @@ flowchart LR
     Test -->|"Gold labels for scoring only"| Score
 ```
 
-The test note's **gold label is not passed to either agent**. Training-note
-gold codes can be returned by the training-example tool. Local search does not
-browse the web.
+The test note's **gold label is not passed to either agent**. 
 
 ## Per-note agent flow
 
