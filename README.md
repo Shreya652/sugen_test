@@ -30,3 +30,15 @@ Open `evaluate_dev_test02.ipynb` to evaluate the 10 held-out notes in
 `data/dev_notes.jsonl` remains unchanged. Since no test gold code appears in
 training, this closed-set system cannot predict the test labels and must score
 zero.
+
+Open `compare_icd_dev_test03.ipynb` to compare dev notes and gold codes with the
+title, definition, and text in `data/final-icd-codes.csv`. This local
+inspection does not call a model or establish clinical correctness.
+
+Open `evaluate_dev_test03.ipynb` for the separate doctor-and-judge experiment
+on the 10 held-out notes. Its prompts are `prompts/test03_doctor.txt` and
+`prompts/test03_judge.txt`. It makes up to eight model calls per note and is
+for research, not clinical use. The judge receives the candidates and all CSV
+code-family entries sharing its first four stem characters; larger contexts can
+increase API cost and latency. It reviews three ranked recommendations together;
+partial results after the retry limit are marked incomplete.
