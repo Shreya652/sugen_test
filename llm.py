@@ -32,7 +32,10 @@ def load_dotenv(path):
             line = line[7:].lstrip()
         key, separator, value = line.partition("=")
         if separator and key.strip():
-            os.environ.setdefault(key.strip(), value.strip().strip("\"'"))
+            env_key = key.strip()
+            env_val = value.strip().strip("\"'")
+            if not os.environ.get(env_key, "").strip():
+                os.environ[env_key] = env_val
 
 
 def normalize_code(code):

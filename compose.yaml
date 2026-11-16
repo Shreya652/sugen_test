@@ -1,0 +1,28 @@
+services:
+  coder:
+    build: .
+    volumes:
+      - ./in:/in
+      - ./out:/out
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      - OPENAI_API_KEY
+      - ANTHROPIC_API_KEY
+      - OPENAI_MODEL
+      - DOCTOR_MODEL
+      - JUDGE_MODEL
+      - MAX_RETRIES
+      - MAX_MODEL_CALLS
+      - CODER_WORKERS
+      - CODER_OFFLINE
+      - CODER_REVIEWS_PATH
+      - CODER_GOLD_PATH
+      - CODER_PER_NOTE_PATH
+      - HTTPS_PROXY
+      - HTTP_PROXY
+      - NO_PROXY
+      - https_proxy
+      - http_proxy
+      - no_proxy
