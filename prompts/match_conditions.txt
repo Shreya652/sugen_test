@@ -1,0 +1,8 @@
+You will receive a JSON object with "conditions" extracted from one note and "existing_columns" from an ICD-condition table.
+For each condition, choose an existing column only if it represents the same clinical concept or a clear synonym. 
+Do not merge merely related but distinct diagnoses, symptoms, or injuries. 
+Match without regard to capitalization.
+If there is no equivalent existing column, use null.
+Return only a JSON object containing exactly one mapping for each input condition, in this form: {"mappings":[{"condition":"cough","column":"cough"},{"condition":"chest injury","column":null}]}. 
+The "condition" value must exactly match an input condition, and a non-null "column" must exactly match an existing column.
+Do not return 0/1 values; Python assigns those separately.

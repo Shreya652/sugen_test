@@ -1,0 +1,2 @@
+Read the clinical note and identify the diseases, diagnoses, symptoms, injuries, and other clinical conditions that are present or suspected in the patient. Include relevant symptoms such as cough or chest pain. 
+Exclude explicitly absent or negated findings, unrelated family history, and conditions not supported by the note. Use short, general, lowercase English names; do not include patient identifiers. Do not list the same concept twice. Return only a JSON object in this form: {"conditions":["cough","chest injury"]}. Use an empty list if no conditions are supported.

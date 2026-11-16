@@ -53,10 +53,7 @@ def load_valid_codes(path):
     }
 
 
-def request_codes(note, model, api_key, provider="openrouter"):
-    system_prompt = SYSTEM_PROMPT_PATH.read_text(encoding="utf-8").rstrip("\n")
-    if not system_prompt.strip():
-        raise ValueError(f"{SYSTEM_PROMPT_PATH}: system prompt is empty")
+def request_json(system_prompt, user_text, model, api_key, provider="openrouter"):
     payload = {
         "model": model,
         "response_format": {"type": "json_object"},
@@ -65,7 +62,7 @@ def request_codes(note, model, api_key, provider="openrouter"):
                 "role": "system",
                 "content": system_prompt,
             },
-            {"role": "user", "content": note},
+            {"role": "user", "content": user_text},
         ],
     }
     if provider == "openrouter":
@@ -112,6 +109,14 @@ def request_codes(note, model, api_key, provider="openrouter"):
         raise RuntimeError(f"{provider} returned an invalid response") from error
     if not isinstance(parsed, dict):
         raise RuntimeError(f"{provider} returned an invalid response")
+    return parsed
+
+
+def request_codes(note, model, api_key, provider="openrouter"):
+    system_prompt = SYSTEM_PROMPT_PATH.read_text(encoding="utf-8").rstrip("\n")
+    if not system_prompt.strip():
+        raise ValueError(f"{SYSTEM_PROMPT_PATH}: system prompt is empty")
+    parsed = request_json(system_prompt, note, model, api_key, provider)
     codes = parsed.get("codes")
     if not isinstance(codes, list):
         raise RuntimeError(f'{provider} response must contain a "codes" list')

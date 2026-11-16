@@ -1,0 +1,60 @@
+{"id": "dev-001", "slice": "A", "gold": ["1F40.Z"], "pred": ["1F40.Z", "1A07.Z", "GB51"], "top1": true, "top3": true}
+{"id": "dev-002", "slice": "A", "gold": ["CA00", "CA07.0"], "pred": ["CA00", "CA07.0", "CA01"], "top1": true, "top3": true}
+{"id": "dev-003", "slice": "A", "gold": ["CA23.30"], "pred": ["CA23.30", "BA40.1", "CA22.0"], "top1": true, "top3": true}
+{"id": "dev-004", "slice": "A", "gold": ["1A07.Z"], "pred": ["1A07.Z", "1F40.Z", "DA61"], "top1": true, "top3": true}
+{"id": "dev-005", "slice": "A", "gold": ["1F23.10"], "pred": ["1F23.10", "GA02.0", "GA05.0"], "top1": true, "top3": true}
+{"id": "dev-006", "slice": "A", "gold": ["1E90.0"], "pred": ["1E90.0", "EK00.6", "BD90.0"], "top1": true, "top3": true}
+{"id": "dev-007", "slice": "A", "gold": ["CA40.Z"], "pred": ["CA40.Z", "CA22.0", "BA00.0"], "top1": true, "top3": true}
+{"id": "dev-008", "slice": "A", "gold": ["1G05"], "pred": ["1G05", "EB00.0", "FA25.2Z"], "top1": true, "top3": true}
+{"id": "dev-009", "slice": "A", "gold": ["1B10.0"], "pred": ["1B10.0", "CA40.Z", "1B95"], "top1": true, "top3": true}
+{"id": "dev-010", "slice": "A", "gold": ["CA03.Z"], "pred": ["CA03.Z", "1E90.0", "BD90.0"], "top1": true, "top3": true}
+{"id": "dev-011", "slice": "A", "gold": ["1C62.0"], "pred": ["1C62.0", "BA00.0", "FA01.Z"], "top1": true, "top3": true}
+{"id": "dev-012", "slice": "A", "gold": ["1F86.0"], "pred": ["1F86.0", "JA62.1", "GB51"], "top1": true, "top3": true}
+{"id": "dev-013", "slice": "A", "gold": ["CA22.0"], "pred": ["CA22.0", "CA40.Z", "4A84.0"], "top1": true, "top3": true}
+{"id": "dev-014", "slice": "A", "gold": ["1A40.Z"], "pred": ["1A40.Z", "1A36.00", "5A40.0"], "top1": true, "top3": true}
+{"id": "dev-015", "slice": "A", "gold": ["1F28.0"], "pred": ["1F28.0"], "top1": true, "top3": true}
+{"id": "dev-016", "slice": "A", "gold": ["1B95"], "pred": ["1B95", "1B10.0", "1E90.0"], "top1": true, "top3": true}
+{"id": "dev-017", "slice": "A", "gold": ["CA01"], "pred": ["CA01", "CA00", "CA07.0"], "top1": true, "top3": true}
+{"id": "dev-018", "slice": "A", "gold": ["1A36.00"], "pred": ["1A36.00", "1A40.Z", "1E90.0"], "top1": true, "top3": true}
+{"id": "dev-019", "slice": "A", "gold": ["1D80.0"], "pred": ["1D80.0", "1E90.0", "BD90.0"], "top1": true, "top3": true}
+{"id": "dev-020", "slice": "A", "gold": ["CA42.Z"], "pred": ["CA42.Z", "BA40.1", "FB40.1"], "top1": true, "top3": true}
+{"id": "dev-021", "slice": "A", "gold": ["DA42.Z"], "pred": ["DA42.Z", "DA61", "1A36.00"], "top1": true, "top3": true}
+{"id": "dev-022", "slice": "A", "gold": ["GC08.Z"], "pred": ["GC08.Z", "GC08.0", "GB51"], "top1": true, "top3": true}
+{"id": "dev-023", "slice": "A", "gold": ["FA01.Z"], "pred": ["FA01.Z", "BA00.0", "1C62.0"], "top1": true, "top3": true}
+{"id": "dev-024", "slice": "A", "gold": ["EB00.0"], "pred": ["EB00.0", "4A84.0"], "top1": true, "top3": true}
+{"id": "dev-025", "slice": "A", "gold": ["GA34.3"], "pred": ["GA34.3", "GA05.0"], "top1": true, "top3": true}
+{"id": "dev-026", "slice": "A", "gold": ["DA09.60"], "pred": ["DA09.60", "1E90.0", "BD90.0"], "top1": true, "top3": true}
+{"id": "dev-027", "slice": "A", "gold": ["GB51"], "pred": ["GB51", "GC08.Z", "JA62.1"], "top1": true, "top3": true}
+{"id": "dev-028", "slice": "A", "gold": ["DA22.Z"], "pred": ["DA22.Z", "5B81.01", "CA23.30"], "top1": true, "top3": true}
+{"id": "dev-029", "slice": "A", "gold": ["FB40.1"], "pred": ["FB40.1", "BA40.1", "FB53.0"], "top1": true, "top3": true}
+{"id": "dev-030", "slice": "A", "gold": ["ED80.2"], "pred": ["ED80.2"], "top1": true, "top3": true}
+{"id": "dev-031", "slice": "A", "gold": ["GA90"], "pred": ["GA90", "5A11"], "top1": true, "top3": true}
+{"id": "dev-032", "slice": "A", "gold": ["DB60.Z"], "pred": ["DB60.Z", "DD91.1", "1A07.Z"], "top1": true, "top3": true}
+{"id": "dev-033", "slice": "A", "gold": ["FA25.2Z"], "pred": ["FA25.2Z", "1G05"], "top1": true, "top3": true}
+{"id": "dev-034", "slice": "A", "gold": ["GA05.0"], "pred": ["GA05.0", "GA02.0", "1E90.0"], "top1": true, "top3": true}
+{"id": "dev-035", "slice": "A", "gold": ["DA61"], "pred": ["DA61", "DA42.Z", "JA24.1"], "top1": true, "top3": true}
+{"id": "dev-036", "slice": "A", "gold": ["EK00.6"], "pred": ["EK00.6", "1E90.0"], "top1": true, "top3": true}
+{"id": "dev-037", "slice": "A", "gold": ["GC08.0"], "pred": ["GC08.0", "GC08.Z", "GB51"], "top1": true, "top3": true}
+{"id": "dev-038", "slice": "A", "gold": ["DD91.1"], "pred": ["DD91.1", "DB60.Z", "1A07.Z"], "top1": true, "top3": true}
+{"id": "dev-039", "slice": "A", "gold": ["FB53.0"], "pred": ["FB53.0", "BA40.1", "FB40.1"], "top1": true, "top3": true}
+{"id": "dev-040", "slice": "A", "gold": ["GA02.0"], "pred": ["GA02.0", "GA05.0", "1F23.10"], "top1": true, "top3": true}
+{"id": "dev-041", "slice": "A", "gold": ["5A11"], "pred": ["5A11", "BA40.1", "FB40.1"], "top1": true, "top3": true}
+{"id": "dev-042", "slice": "A", "gold": ["BA00.0"], "pred": ["BA00.0", "1C62.0", "FA01.Z"], "top1": true, "top3": true}
+{"id": "dev-043", "slice": "A", "gold": ["JA40.0"], "pred": ["JA40.0", "QA42.0", "JA62.1"], "top1": true, "top3": true}
+{"id": "dev-044", "slice": "A", "gold": ["5A21.0"], "pred": ["5A21.0", "BA00.0", "1C62.0"], "top1": true, "top3": true}
+{"id": "dev-045", "slice": "A", "gold": ["BD71.4"], "pred": ["BD71.4", "BD10"], "top1": true, "top3": true}
+{"id": "dev-046", "slice": "A", "gold": ["JB64.0"], "pred": ["JB64.0", "QA42.0", "JA40.0"], "top1": true, "top3": true}
+{"id": "dev-047", "slice": "A", "gold": ["5A02.0"], "pred": ["5A02.0", "5A11", "1B10.0"], "top1": true, "top3": true}
+{"id": "dev-048", "slice": "A", "gold": ["JA24.1"], "pred": ["JA24.1", "BA00.0", "DA61"], "top1": true, "top3": true}
+{"id": "dev-049", "slice": "A", "gold": ["4A84.0"], "pred": ["4A84.0", "CA22.0", "EB00.0"], "top1": true, "top3": true}
+{"id": "dev-050", "slice": "A", "gold": ["BC81.3Z"], "pred": ["BC81.3Z", "CA22.0", "CA40.Z"], "top1": true, "top3": true}
+{"id": "dev-051", "slice": "A", "gold": ["5B52"], "pred": ["5B52", "1F40.Z", "1A07.Z"], "top1": true, "top3": true}
+{"id": "dev-052", "slice": "A", "gold": ["BD10"], "pred": ["BD10", "BA00.0", "CA40.Z"], "top1": true, "top3": true}
+{"id": "dev-053", "slice": "A", "gold": ["QA42.0"], "pred": ["QA42.0", "DA42.Z", "JA40.0"], "top1": true, "top3": true}
+{"id": "dev-054", "slice": "A", "gold": ["5A40.0"], "pred": ["5A40.0"], "top1": true, "top3": true}
+{"id": "dev-055", "slice": "A", "gold": ["BA40.1"], "pred": ["BA40.1", "FB40.1", "CA23.30"], "top1": true, "top3": true}
+{"id": "dev-056", "slice": "A", "gold": ["JA63.2"], "pred": ["JA63.2"], "top1": true, "top3": true}
+{"id": "dev-057", "slice": "A", "gold": ["5A00.2Z"], "pred": ["5A00.2Z", "5B81.01", "DB60.Z"], "top1": true, "top3": true}
+{"id": "dev-058", "slice": "A", "gold": ["BD90.0"], "pred": ["BD90.0", "CA00", "CA07.0"], "top1": true, "top3": true}
+{"id": "dev-059", "slice": "A", "gold": ["JA62.1"], "pred": ["JA62.1", "GC08.Z", "QA42.0"], "top1": true, "top3": true}
+{"id": "dev-060", "slice": "A", "gold": ["5B81.01"], "pred": ["5B81.01", "DA22.Z", "5A00.2Z"], "top1": true, "top3": true}
