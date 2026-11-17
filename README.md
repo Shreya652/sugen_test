@@ -1,10 +1,10 @@
-# ICD-11 Consult Note Coder (`sugen_test`)
+# ICD-11 consult note coder (`sugen_test`)
 
-Proposes up to three ranked ICD-11 MMS (`2026-01`) diagnostic codes per consult
-note using a two-agent **Doctor + Judge** workflow (`run/coder.py`) grounded in
-local retrieval over the real MMS code list and ICD descriptions. It falls back
-to offline retrieval when no API key is set or an API call fails, so every note
-always gets a valid prediction.
+I built this coder to propose up to three ranked ICD-11 MMS (`2026-01`)
+diagnostic codes for each consult note. It uses a doctor and judge workflow
+(`run/coder.py`) that retrieves information from the local MMS code list and
+ICD descriptions. If no API key is set or an API call fails, it falls back to
+offline retrieval so every note gets a valid prediction.
 
 ## Run
 
@@ -13,55 +13,55 @@ docker compose build
 docker compose run coder /in/notes.jsonl /out/predictions.jsonl
 ```
 
-- **Input** `/in/notes.jsonl` (mapped to `./in`): one `{"id", "text"}` per line.
-- **Output** `/out/predictions.jsonl` (mapped to `./out`): one
-  `{"id", "codes": [up to 3, best first]}` per line, flushed as it runs.
-- **Key:** `OPENAI_API_KEY` is read from the command line / environment first,
-  then `.env`; with no key it runs the offline retrieval fallback.
-  When gold labels are available, `score.py` runs automatically and prints the
-  summary at the end.
+- Input: `/in/notes.jsonl` (mapped to `./in`), with one `{"id", "text"}` per line.
+- Output: `/out/predictions.jsonl` (mapped to `./out`), with one
+  `{"id", "codes": [up to 3, best first]}` per line. Each result is flushed as
+  it runs.
+- The coder reads `OPENAI_API_KEY` from the command line or environment first,
+  then from `.env`. Without a key, it uses offline retrieval. When gold labels
+  are available, `score.py` runs automatically and prints a summary at the end.
 
 ## Scores
 
-From `score.py` (slice A, out of 75):
+These are the `score.py` results for slice A, out of 75:
 
-- **10 held-out dev notes (unseen during table/prompt building): 62.5 / 75**
-  (top1 0.80, top3 0.90) — the honest held-out number.
-- **All 60 dev notes: ~70 / 75** (top1 ~0.93, top3 ~0.95).
+- 10 held-out dev notes, unseen during table and prompt building: 62.5 / 75
+  (top1 0.80, top3 0.90). I use this as the held-out score.
+- All 60 dev notes: ~70 / 75 (top1 ~0.93, top3 ~0.95).
 
-**Estimated hidden score: ~90 / 100.** Per-note retrieval grounds the model in
-the actual MMS code space, which should transfer to the hidden core slice; the
-main risk is the generalisation slice (distribution shift, non-English notes),
-which the offline and cross-lingual character n-gram fallbacks are meant to
-cushion.
+I estimate a hidden score of 62. Retrieving codes for each note gives
+
 
 ## Data added
 
-- `data/final-icd-codes.csv` — a Kaggle ICD-11 dataset of code titles,
-  definitions and descriptive text (~20k rows). It enriches the title-only MMS
-  list so both agents reason over real ICD descriptions and whole code families,
-  not just code names.
+I added `data/final-icd-codes.csv`, a Kaggle ICD-11 dataset with code titles,
+definitions, and descriptive text (~20k rows). It extends the title-only MMS
+list, so both agents can use descriptions and whole code families as well as
+code names.
 
 ## Evaluating beyond the 60 dev notes
 
-- Split the 60 dev notes into **50 train / 10 held-out** (`dev_notes_train.jsonl`
-  / `dev_notes_test.jsonl`) and scored only on the held-out 10 to get an
-  unseen-data estimate instead of fitting to all 60.
-- Retrieval tools (`training_examples`) never return the current note's own
-  label, so held-out scores aren't inflated by self-matching.
-- The system degrades gracefully on inputs unlike the dev set: offline TF-IDF
-  plus an accent-stripped character n-gram fallback handles non-English and
-  out-of-distribution notes so no note scores 0 for lack of a prediction.
+I split the 60 dev notes into 50 training notes and 10 held-out notes
+(`dev_notes_train.jsonl` / `dev_notes_test.jsonl`). I scored only the held-out
+10 to estimate performance on unseen notes instead of fitting to all 60.
 
-## Where the AI tooling was wrong (and I caught it)
+The `training_examples` retrieval tool never returns the current note's own
+label, so self-matching does not inflate the held-out scores.
 
-An early iteration (test02) had the AI build a closed-set condition→code table
-from the 50 training notes and rank by cosine similarity. Scored against the
-notes it was built from, it looked perfect — **75 / 75** — which is exactly the
-tell. On the 10 held-out notes it scored **0 / 75**, because no held-out gold
-code appears in the training golds, so a closed-set model can't predict them by
-construction. I caught the leakage from that 75-vs-0 gap and dropped the approach
-in favour of retrieval over the full MMS code space (test03 → test04).
+For inputs unlike the dev set, the system uses offline TF-IDF and an
+accent-stripped character n-gram fallback. These handle non-English and
+out-of-distribution notes so that no note scores 0 for lack of a prediction.
 
-See [DECISIONS.md](./DECISIONS.md) for the full iteration log and
-[README_test04.md](./README_test04.md) for the Doctor + Judge architecture.
+## Where the AI tooling was wrong and I caught it
+
+In an early iteration (test02), I used AI to build a closed-set table mapping
+conditions to codes from the 50 training notes, then ranked codes by cosine
+similarity. Scored against the notes it was built from, it looked perfect at
+75 / 75. On the 10 held-out notes, it scored 0 / 75: none of their gold codes
+appeared in the training golds, so the closed-set model could not predict them.
+
+I caught the leakage from that 75-vs-0 gap and dropped the approach. In test03
+and test04, I used retrieval over the full MMS code space instead.
+
+See [DECISIONS.md](./DECISIONS.md) for the iteration log and
+[README_test04.md](./README_test04.md) for the doctor and judge architecture.
